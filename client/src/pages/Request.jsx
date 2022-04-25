@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import Header from "../components/Header";
 import { useGlobalContext } from "../context";
 import axios from "axios";
+import "./request.css";
 
 const Request = () => {
 	const { data } = useGlobalContext();
@@ -79,20 +80,20 @@ const Request = () => {
 								<option value='glo'>Glo</option>
 								<option value='9mobile'>9mobile</option>
 							</select>
-							<label htmlFor=''>
+							<label htmlFor='' className='d-block'>
 								Amount:{" "}
-								<input
-									type='text'
-									name='value'
-									value={item.value}
-									onChange={handleChange(item.id)}
-									required
-								/>
 							</label>
+							<input
+								type='text'
+								name='value'
+								value={item.value}
+								onChange={handleChange(item.id)}
+								required
+							/>
 						</div>
 					);
 				})}
-				<button className='btn btn-info'>Send</button>
+				<button className='btn btn-info my-2'>Submit</button>
 			</form>
 		</div>
 	);
